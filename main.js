@@ -1,13 +1,12 @@
 const activitySelect = document.getElementById('activitySelect')
 const activityContainer = document.getElementById('activityContainer')
 const addBtn = document.createElement('button')
-const babyEatingImgUrl = 'babyfood.png'
-const bottleImageUrl = 'baby-bottle.png'
-const diaperImageUrl = 'diaper.png'
-const babysleepingImageUrl = 'sleepImage.png'
-let count = 0
+const babyEatingImgUrl = 'imgs/babyfood.png'
+const bottleImageUrl = 'imgs/baby-bottle.png'
+const diaperImageUrl = 'imgs/diaper.png'
+const babysleepingImageUrl = 'imgs/sleepImage.png'
 
-// Connect to Database
+
 
 // create diaper info
 function createDiaper(){
@@ -43,8 +42,10 @@ function createDiaper(){
     addBtn.classList.add('mt-2', 'mb-3')
     addBtn.id = 'addDiaperBtn'
     addBtn.textContent = "Añadir Pañal"
-    const total = document.createElement('h1')
-    total.textContent = "Total De Pañales"
+    const titulo = document.createElement('h1')
+    titulo.textContent = "Detalle De Pañales"
+    const total = document.createElement('h4')
+    total.textContent = "Total: "
     const mojado = document.createElement('h4')
     mojado.textContent = "Pañales Mojados 💦: "
     const caca = document.createElement('h4')
@@ -55,7 +56,7 @@ function createDiaper(){
     detalles.textContent = "Detalles"
     const detailsContainer = document.createElement('div')
     detailsContainer.id = 'detailsContainer'
-    detailsContainer.append(total,mojado,caca,ambos)
+    detailsContainer.append(titulo,mojado,caca,ambos,total)
 
     activityContainer.appendChild(iconimage)
     activityContainer.appendChild(todayElement)
@@ -102,8 +103,8 @@ function createFood(){
     addBtn.classList.add('mt-2', 'mb-3')
     addBtn.id = 'addBtn'
     addBtn.textContent = "Añadir Comida"
-    const total = document.createElement('h1')
-    total.textContent = "Conteo de Comidas"
+    const titulo = document.createElement('h1')
+    titulo.textContent = "Conteo de Comidas"
     const botellas = document.createElement('h4')
     botellas.textContent = "Botellas 🍼: "
     const tetas = document.createElement('h4')
@@ -114,7 +115,9 @@ function createFood(){
     detalles.textContent = "Detalles"
     const detailsContainer = document.createElement('div')
     detailsContainer.id = 'detailsContainer'
-    detailsContainer.append(total,botellas,tetas,babyFood)
+    const total = document.createElement('h4')
+    total.textContent = "Total: "
+    detailsContainer.append(titulo,botellas,tetas,babyFood,total)
 
     activityContainer.appendChild(iconimage)
     activityContainer.appendChild(todayElement)
@@ -146,18 +149,18 @@ function createSleep(){
     selectElement.id = 'detailSelect'
     selectElement.classList.add('text-center')
     const option1 = document.createElement('option')
-    option1.value = "Dormid@"
+    option1.value = "Dormido"
     option1.textContent = "Durmiendo 😴"
     selectElement.appendChild(option1)
     const option2 = document.createElement('option')
-    option2.value = "Despiert@"
+    option2.value = "Despiert0"
     option2.textContent = "Despiert@ 👁️"
     selectElement.appendChild(option2)
     addBtn.classList.add('mt-2', 'mb-3')
     addBtn.id = 'addBtn'
     addBtn.textContent = "Añadir Actividad"
-    const total = document.createElement('h1')
-    total.textContent = "Conteo de Actividad"
+    const titulo = document.createElement('h1')
+    titulo.textContent = "Conteo de Actividad"
     const durmiendo = document.createElement('h4')
     durmiendo.textContent = "Durmiend@ 😴: "
     const despierto = document.createElement('h4')
@@ -166,7 +169,9 @@ function createSleep(){
     detalles.textContent = "Detalles"
     const detailsContainer = document.createElement('div')
     detailsContainer.id = 'detailsContainer'
-    detailsContainer.append(total,durmiendo,despierto)
+    const total = document.createElement('h4')
+    total.textContent = "Total: "
+    detailsContainer.append(titulo,durmiendo,despierto,total)
     
     activityContainer.appendChild(iconimage)
     activityContainer.appendChild(todayElement)
@@ -219,24 +224,53 @@ function getFormattedDate() {
 
 })
 
-addBtn.addEventListener('click',()=>{
-    let activity = activitySelect.value
-    let detail = document.getElementById('detailSelect').value
-    count = 1
+addBtn.addEventListener('click', () => {
+    let activity = activitySelect.value;
+    let detail = document.getElementById('detailSelect').value;
+  
     switch(activity){
         case "Pañal":
-            // send to database function with values as arguments
-            break;
+            // add +1 to total
+            switch(detail){
+                case "Mojado":
+                // add +1 to mojado
+                break;
+                case "Caca":
+                // add +1 to caca
+                break;
+                case "Ambos":
+                // add +1 to ambos
+                break;
+            }
+        break;
         case "Comer":
-            // send to database function with values as arguments
-            break;
+            // add +1 to total
+            switch(detail){
+                case "Botella":
+                // add +1 to botella
+                break;
+                case "Teta":
+                // add +1 to Teta
+                break;
+                case "Baby Food":
+                // add +1 to baby food
+                break;
+            }
+        break;
         case "Dormir":
-            // send to database function with values as arguments
-            break;
+            // add +1 to total
+            switch(detail){
+                case "Dormido":
+                // add +1 to dormido
+                break;
+                case "Despierto":
+                // add +1 to despierto
+                break
+            }
     }
-})
-
-// send to data base 
-
-
-// retrieve from database 
+  
+    
+    
+  });
+  
+  // Function to update the UI with the latest counts
