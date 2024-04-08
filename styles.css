@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&family=M+PLUS+Rounded+1c&family=Oxygen:wght@300;400;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* FONTS
+    font-family: "Oxygen", sans-serif;
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Prompt", sans-serif;
+    background-image: url(bg2.png);
+    font-style: italic;
+}
+
+.overlay {
+    background-color: rgba(102, 51, 153, 0.275);
+    min-height: 100vh;
+}
+
+img {
+    height: 75px;
+    width: 75px;
+}
+
+footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: rgb(208, 0, 255);
+    padding: 10px;
+}
+
+#activitySelectContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+#activitySelectContainer h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+#activityContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#activityContainer h1 {
+    color: rgb(208, 0, 255);
+}
+
+#activityWrapper {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#activityWrapper select {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+#activityWrapper h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 10px;
+}
+
+#activityWrapper h4 {
+    font-weight: bold;
+}
+
+#activityWrapper button {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(189, 76, 214);
+    color: white;
+    font-size: 1.5rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#detailsContainer {
+    background-color: rgba(170, 0, 255, 0.345);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
