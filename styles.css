@@ -17,6 +17,8 @@ body {
 .overlay {
     background-color: rgba(102, 51, 153, 0.275);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -28,6 +30,17 @@ footer {
     margin-top: auto;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+p{
+ margin: 0;
+}
+
+footer p {
+    font-size: 1rem;
 }
 
 a {
@@ -53,7 +66,6 @@ header h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
     font-size: 1.5rem;
 }
 
@@ -71,7 +83,11 @@ header h1 {
 }
 
 #activityContainer h1 {
-    color: rgb(208, 0, 255);
+    color: rgb(255, 255, 255);
+}
+
+#activityContainer h2{
+    color: white;
 }
 
 #activityWrapper {
@@ -116,7 +132,8 @@ header h1 {
     align-items: center;
 }
 
-#detailsContainer {
+#detailsContainer,
+#activityContainer h1 {
     background-color: rgba(170, 0, 255, 0.345);
     border-radius: 25px;
     display: flex;
